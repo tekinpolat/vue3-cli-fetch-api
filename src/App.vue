@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<div>
+		<User v-if="showUser"/>
+		<Post v-else-if="showUserPost" :user="user"/>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import User from '@/components/User';
+	import Post from '@/components/Post';
+	export default {
+		name: 'App',
+		components: {
+			User,
+			Post
+		},
+		data(){
+			return {
+				user : 0,
+				showUser : true,
+				showUserPost : false	
+			}
+		},
+		methods:{
+			
+			
+		},
+		created(){
+			
+		}
+	}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
